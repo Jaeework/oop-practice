@@ -10,6 +10,10 @@ public class GradeCalculator {
         this.courses = new Courses(courses);
     }
 
+    public GradeCalculator(Courses courses) {
+        this.courses = courses;
+    }
+
     public double calculateGrade() {
         // (학점수 * 교과목 평점)의 합계
         double totalMultipliedCreditAndCourseGrade = courses.multiplyCreditAndCourseGrade();

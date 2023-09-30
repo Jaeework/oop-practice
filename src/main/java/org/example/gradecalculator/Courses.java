@@ -11,13 +11,9 @@ public class Courses {
     }
 
     public double multiplyCreditAndCourseGrade() {
-        double multipliedCreditAndCourseGrade = 0;
-
-        for(Course course : courses) {
-            multipliedCreditAndCourseGrade += course.multiplyCreditAndCourseGrade();    // 응집도 향상
-        }
-
-        return multipliedCreditAndCourseGrade;
+        return courses.stream()
+                .mapToDouble(course -> course.multiplyCreditAndCourseGrade())
+                .sum();
     }
 
     public int calculateTotalCompletedCredit() {
